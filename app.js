@@ -23,6 +23,7 @@ const userRouter = require("./routes/user.js");
 
 //connection db
 const dbUrl = process.env.ATLASDB_URL;
+// const dbUrl = "mongodb://127.0.0.1:27017/findmyroom";
 
 main()
   .then(() => {
