@@ -149,6 +149,39 @@ body {
   display: none; /* desktop hidden */
 }
 
+/* MAP */
+#map {
+  width: 100%;
+  height: 300px;        /* Aap chahe to yeh height badha sakte hain */
+  border-radius: 10px;  /* Optional */
+}
+
+/* Things to Know */
+.things-box {
+  border: 1px none #ddd;
+  padding: 10px;
+  border-radius: 10px;
+  height: 200px;
+  background: #fafafa;
+}
+
+.things-box p {
+  color: gray;
+}
+
+.things-box p b {
+  color: black;
+}
+
+.things-box p a {
+  color: gray;
+}
+
+.things-box p a:hover {
+  color: black;
+}
+
+
 /* RESPONSIVENESS */
 @media (max-width: 700px) {
   #filter-more-btn {
@@ -180,27 +213,15 @@ body {
   }
 }
 
-/* Things to Know */
-.things-box {
-  border: 1px none #ddd;
-  padding: 10px;
-  border-radius: 10px;
-  height: 200px;
-  background: #fafafa;
+
+@media (max-width: 768px) {
+  #map {
+    height: 250px;
+  }
 }
 
-.things-box p {
-  color: gray;
-}
-
-.things-box p b {
-  color: black;
-}
-
-.things-box p a {
-  color: gray;
-}
-
-.things-box p a:hover {
-  color: black;
+@media (max-width: 480px) {
+  #map {
+    height: 200px;
+  }
 }
