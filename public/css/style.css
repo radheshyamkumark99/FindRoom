@@ -122,3 +122,85 @@ body {
   height: 400px;
   width: 100vh;
 }
+
+/* Filters */
+#filters-wrapper {
+  position: relative;
+  padding-right: 45px;
+}
+
+#filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  transition: 0.3s;
+  overflow: hidden;
+}
+
+/* Hamburger button */
+#filter-more-btn {
+  position: absolute;
+  right: 0;
+  top: 22%;
+  transform: translateY(-1%);
+  z-index: 100;
+  font-size: 30px;
+  cursor: pointer;
+  display: none; /* desktop hidden */
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 700px) {
+  #filter-more-btn {
+    display: block;
+  }
+
+  /* hide all filters */
+  #filters .filter {
+    display: none;
+  }
+
+  /* show first  */
+  #filters .filter:nth-child(-n + 4) {
+    display: flex;
+  }
+
+  /* show all when expanded */
+  #filters.expanded .filter {
+    display: flex;
+  }
+
+  /* tax toggle always visible */
+  #filters .tax-toggle {
+    display: flex !important;
+  }
+
+  #filters .res {
+    display: none !important;
+  }
+}
+
+/* Things to Know */
+.things-box {
+  border: 1px none #ddd;
+  padding: 10px;
+  border-radius: 10px;
+  height: 200px;
+  background: #fafafa;
+}
+
+.things-box p {
+  color: gray;
+}
+
+.things-box p b {
+  color: black;
+}
+
+.things-box p a {
+  color: gray;
+}
+
+.things-box p a:hover {
+  color: black;
+}

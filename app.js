@@ -22,8 +22,8 @@ const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 
 //connection db
-const dbUrl = process.env.ATLASDB_URL;
-// const dbUrl = "mongodb://127.0.0.1:27017/findmyroom";
+// const dbUrl = process.env.ATLASDB_URL;
+const dbUrl = "mongodb://127.0.0.1:27017/findmyroom";
 
 main()
   .then(() => {
@@ -44,17 +44,17 @@ app.use(methodoverride("_method"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
 
-// const store = MongoStore.create({
-//   mongoUrl: dbUrl,
-//   crypto: {
-//     secret: process.env.SECRET ,
-//   },
-//   touchAfter: 24 * 3600,
-// });
+const store = MongoStore.create({
+  mongoUrl: dbUrl,
+  crypto: {
+    secret: process.env.SECRET ,
+  },
+  touchAfter: 24 * 3600,
+});
 
-// store.on("error", () => {
-//   console.log("Error in mongo session store", err);
-// });
+store.on("error", () => {
+  console.log("Error in mongo session store", err);
+});
 
 //EXPRESS-SESSION
 const sessionOptions = {
