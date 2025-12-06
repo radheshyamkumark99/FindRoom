@@ -225,3 +225,39 @@ body {
     height: 200px;
   }
 }
+
+
+
+
+
+/* मोबाइल पर horizontal scroll रोकने के लिए */
+body, html {
+  overflow-x: hidden !important;
+}
+
+/* बड़े offsets को मोबाइल पर reset करने के लिए */
+@media (max-width: 576px) {
+  .offset-3, .offset-5 {
+    margin-left: 0 !important;
+  }
+
+  .btns, .edit-btn {
+    gap: 2rem;
+  }
+
+  /* Columns को 100% width पर ले आओ */
+  .col-8, .col-sm-8, .col-md-8, .col-lg-6 {
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  /* Image को container के अंदर fit करो */
+  .show-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .listing-card {
+    margin-left: 0 !important;
+  }
+}
